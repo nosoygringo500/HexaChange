@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HexaChange</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">HX</div>
+      <div class="brand-text">
+        <div class="title">HexaChange</div>
+        <div class="subtitle">Elige una versión</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="pill" id="roomPill" title="Código de sala (futuro multijugador)">
+        Sala: <span id="roomCode">------</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <a class="card" href="./colorroll-lite.html" id="goLite">
+        <div class="card-top">
+          <div class="card-title">ColorRoll Lite</div>
+          <div class="tag">Modo corto</div>
+        </div>
+        <p class="card-desc">Solo suerte. Dado normal 1–6. Llega al ❤️.</p>
+        <div class="card-bottom">
+          <span class="cta">Entrar</span>
+          <span class="meta">10 / 20 / 50 círculos</span>
+        </div>
+      </a>
+
+      <a class="card" href="./probalico.html" id="goProba">
+        <div class="card-top">
+          <div class="card-title">Probalico</div>
+          <div class="tag tag-alt">Modo medio</div>
+        </div>
+        <p class="card-desc">Probabilidades dinámicas con “Regalar turno”.</p>
+        <div class="card-bottom">
+          <span class="cta">Entrar</span>
+          <span class="meta">100 / 150 / 200 círculos</span>
+        </div>
+      </a>
+
+      <div class="card card-disabled" aria-disabled="true">
+        <div class="card-top">
+          <div class="card-title">HexaChange</div>
+          <div class="tag tag-soon">PRÓXIMAMENTE</div>
+        </div>
+        <p class="card-desc">Versión completa multijugador (Socket.IO listo a futuro).</p>
+        <div class="card-bottom">
+          <span class="cta cta-disabled">No disponible</span>
+          <span class="meta">Hasta 10 jugadores</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Sin frameworks • HTML/CSS/JS</span>
+      <span class="dot">•</span>
+      <span>Diseño futurista • Glow • Gradientes</span>
+    </footer>
+  </main>
+
+  <script>
+    // Mantener index limpio: solo lógica mínima de UX (NO juego).
+    // Genera/recupera código de sala (extra).
+    (function () {
+      const KEY = "hexachange_room";
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      const make = () => Array.from({ length: 6 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+
+      let code = localStorage.getItem(KEY);
+      if (!code || code.length !== 6) {
+        code = make();
+        localStorage.setItem(KEY, code);
+      }
+      document.getElementById("roomCode").textContent = code;
+    })();
+  </script>
+</body>
+</html>

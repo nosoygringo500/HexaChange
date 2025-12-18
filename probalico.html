@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HexaChange • Probalico</title>
+  <link rel="stylesheet" href="./css/selector.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="header">
+    <a class="back" href="./index.html">← Volver</a>
+    <div class="hgroup">
+      <h1>Probalico</h1>
+      <p>Elige el tamaño del tablero (modo medio).</p>
+    </div>
+    <div class="pill">Sala: <span id="roomCode">------</span></div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-title">¿Cuántos círculos?</div>
+
+      <div class="list" data-mode="probalico">
+        <button class="list-item" data-circles="100">
+          <span class="icon">🧠</span>
+          <span class="text">
+            <span class="label">100 círculos</span>
+            <span class="desc">Modo medio (rápido)</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="list-item" data-circles="150">
+          <span class="icon">🔮</span>
+          <span class="text">
+            <span class="label">150 círculos</span>
+            <span class="desc">Balanceado</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="list-item" data-circles="200">
+          <span class="icon">👑</span>
+          <span class="text">
+            <span class="label">200 círculos</span>
+            <span class="desc">Modo medio (largo)</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+      </div>
+
+      <div class="hint">
+        <div class="hint-bullet">🎁</div>
+        <div class="hint-text">“Regalar turno” (máx. 3) cambia las probabilidades en vivo para toda la sala.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/selector.js"></script>
+</body>
+</html>

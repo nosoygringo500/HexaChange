@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HexaChange • ColorRoll Lite</title>
+  <link rel="stylesheet" href="css/selector.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="header">
+    <a class="back" href="./index.html">← Volver</a>
+    <div class="hgroup">
+      <h1>ColorRoll Lite</h1>
+      <p>Elige el tamaño del tablero (modo corto).</p>
+    </div>
+    <div class="pill">Sala: <span id="roomCode">------</span></div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-title">¿Cuántos círculos?</div>
+
+      <div class="list" data-mode="colorroll">
+        <button class="list-item" data-circles="10">
+          <span class="icon">🎲</span>
+          <span class="text">
+            <span class="label">10 círculos</span>
+            <span class="desc">Partida rápida</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="list-item" data-circles="20">
+          <span class="icon">⚡</span>
+          <span class="text">
+            <span class="label">20 círculos</span>
+            <span class="desc">Ritmo medio</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+
+        <button class="list-item" data-circles="50">
+          <span class="icon">💠</span>
+          <span class="text">
+            <span class="label">50 círculos</span>
+            <span class="desc">Más largo y tenso</span>
+          </span>
+          <span class="chev">›</span>
+        </button>
+      </div>
+
+      <div class="hint">
+        <div class="hint-bullet">ℹ️</div>
+        <div class="hint-text">Se guardará tu selección y entrarás a la sala con ese tablero.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/selector.js"></script>
+</body>
+</html>
