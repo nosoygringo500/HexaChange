@@ -1,1 +1,0 @@
-Place these files in /hexachange/multimedia and reference them in HTML/CSS (e.g. <img src="./multimedia/heart-pulse.svg">).
