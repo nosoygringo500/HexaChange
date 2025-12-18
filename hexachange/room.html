@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HexaChange • Sala</title>
+  <link rel="stylesheet" href="./css/room.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="header">
+    <a class="back" href="./index.html">← Volver</a>
+    <div class="hgroup">
+      <h1>Sala</h1>
+      <p>Crea una sala o únete con un código (A–Z, a–z, 0–9).</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="row">
+        <div class="block">
+          <div class="label">Tu nombre</div>
+          <input id="nameInput" class="input" maxlength="18" placeholder="Ej: papu" />
+        </div>
+
+        <div class="block">
+          <div class="label">Modo elegido</div>
+          <div class="pill" id="modePill">—</div>
+        </div>
+
+        <div class="block">
+          <div class="label">Círculos</div>
+          <div class="pill" id="circlesPill">—</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid2">
+        <div class="card">
+          <h2>Crear sala</h2>
+          <p class="muted">Genera un código y entra como host (podrás iniciar).</p>
+
+          <div class="codebox">
+            <span class="code" id="newRoomCode">------</span>
+            <button class="btn" id="regenBtn" title="Generar otro código">↻</button>
+          </div>
+
+          <button class="btn primary" id="createBtn">Crear y entrar</button>
+        </div>
+
+        <div class="card">
+          <h2>Unirte a sala</h2>
+          <p class="muted">Escribe el código de 6 caracteres y entra.</p>
+
+          <input id="joinCodeInput" class="input codeinput" maxlength="6" placeholder="Ej: aB3kZ9" />
+          <button class="btn primary" id="joinBtn">Unirme</button>
+
+          <div class="hint">
+            <div class="hint-ico">ℹ️</div>
+            <div class="hint-txt">Mínimo 2 jugadores para iniciar.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEBUG: si sigue saliendo — te dirá qué falta -->
+      <div style="margin-top:14px; opacity:.75; font-size:12px;">
+        Debug: <span id="debugLine">—</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ IMPORTANTE: SCRIPT AL FINAL -->
+  <script src="./js/room.js"></script>
+</body>
+</html>
